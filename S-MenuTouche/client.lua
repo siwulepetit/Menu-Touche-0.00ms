@@ -4,43 +4,6 @@ RegisterCommand("+opentouche", function()
     openMenuTouche()
 end)
 
-function openMenuTouche1()
-   local menuTest = RageUI.CreateMenu("","menu touche")
-    local admin = F10
-    local interaction = F5
-
-    RageUI.Visible(menuTest, not RageUI.Visible(menuTest))
-
-    while menuTest do
-
-        Citizen.Wait(0)
-
-        RageUI.IsVisible(menuTest,true,true,true,function()
-           RageUI.ButtonWithStyle("Menu Admin",nil, true, {RightLabel = "~r~"..admin}, true, function(Hovered, Active, Selected)
-               if Selected then
-               end
-           end)
-            RageUI.ButtonWithStyle("Menu interaction", true , true, {RightLabel = "~r~"..interaction}, true, function(Hovered, Active, Selected)
-                if Selected then
-                end
-            end)
-            RageUI.ButtonWithStyle("Menu interaction", true , true, {RightLabel = "~r~"}, true, function(Hovered, Active, Selected)
-                if Selected then
-                end
-            end)
-
-
-
-        end, function()
-        end)
-
-        if not RageUI.Visible(menuTest) then
-            menuTest=RMenu:DeleteType("", true)
-        end
-
-    end
-end
-
 function openMenuTouche()
 
     local menuTest = RageUI.CreateMenu(nil, GetPlayerName(PlayerId()))
